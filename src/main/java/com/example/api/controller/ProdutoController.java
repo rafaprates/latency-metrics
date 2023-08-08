@@ -15,10 +15,10 @@ public class ProdutoController {
         this.produtoService = produtoService;
     }
 
-    @Timed(value = "latencia.produtos")
     @PostMapping("/produtos")
+    @Timed(value = "latencia.produtos", histogram = true)
     public ResponseEntity<String> criarProdutoAleatorio() {
-        String nomeProduto = produtoService.criarProdutoAleatorio();
-        return ResponseEntity.status(201).body(nomeProduto);
+        String produtoId = produtoService.criarProdutoAleatorio();
+        return ResponseEntity.status(201).body(produtoId);
     }
 }
