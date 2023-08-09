@@ -4,6 +4,13 @@
 ## Objetivo
 O objetivo deste projeto é demonstrar a facilidade de monitorar uma aplicação Spring Boot com o Spring Actuator, Prometheus e Grafana.
 
+## Introdução
+A observabilidade está apoiada em três pilares: logs, métricas e rastreamento ([Pilares da Observabilidade](docs/img/observabilidade-pilares.png)). 
+Neste projeto, no entanto, vamos nos ater somente ao pilar de métricas. 
+Em especial, o foco será em como monitorar o tempo de serviço de uma aplicação Spring Boot.
+Para isso, iremos criar a arquitetura a seguir.
+[Arquitetura](docs/img/arquitetura.png)
+
 
 ## Tecnologias utilizadas
 1. Spring Actuator para monitoramento de métricas
@@ -65,7 +72,7 @@ public TimedAspect timedAspect(MeterRegistry registry) {
 }
 ```
 
-### 2) Exportando o tempo de serviço de um método
+### 2) Exemplo de monitoramento do tempo de serviço de um endpoint
 ```java
 @RestController
 public class HelloController {
@@ -77,8 +84,10 @@ public class HelloController {
     }
 }
 ```
+A anotação @Timed é a responsável por monitorar o tempo de serviço de um método.
 
 Com isso, as métricas serão expostas no endpoint http://localhost:8080/actuator/prometheus.
+Resta agora, configurar o Prometheus para ler essa métricas e armazená-las em seu banco de dados.
 
 ## Configurando o Prometheus e o Grafana
 
