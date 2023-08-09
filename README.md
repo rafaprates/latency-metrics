@@ -144,6 +144,8 @@ Para isso, basta acessar o [endereço padrão do grafana](http://localhost:3030)
 O tempo de serviço é o tempo que o método leva para executar uma tarefa.
 Enquanto que o tempo de resposta é o tempo que o cliente leva para receber a resposta do servidor.
 
+![Serviço vs resposta](docs/img/servico-vs-resposta.jpg)
+
 ## Por que medir os percentis ao invés da média?
 A média é uma medida de tendência central que representa o valor central de um conjunto de dados.
 Porém, a média não é uma boa medida para representar o tempo de resposta de uma aplicação, pois ela é muito sensível a outliers.
