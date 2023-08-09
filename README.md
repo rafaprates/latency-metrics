@@ -11,7 +11,7 @@ Em especial, o foco será em como monitorar o tempo de serviço de uma aplicaç�
 Para isso, iremos criar a arquitetura a seguir.
 
 ## Arquitetura
-![Arquitetura](docs/img/arquitetura.png)
+![Arquitetura](docs/img/arch.png)
 
 
 ## Tecnologias utilizadas
